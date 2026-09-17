@@ -1,0 +1,83 @@
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // 1. Seleciona os botões originais de perfil
+        const botoes = document.querySelectorAll('.profile-btn');
+        const container = document.querySelector('.login-panel');
+    
+        botoes.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Captura o texto do <strong> (Estudante ou Professor)
+                const perfil = btn.querySelector('strong').innerText.trim();
+                
+                // LÓGICA DE DIFERENCIAÇÃO:
+                // Se for Professor, a dica é CPF. Caso contrário, é RA.
+                const dica = (perfil === "Professor") ? "DIGITE SEU CPF" : "DIGITE SEU RA";
+    
+                // 2. Substitui o conteúdo mantendo o visual
+                container.innerHTML = `
+                    <div class="welcome-text">
+                        <h1>Acesso: ${perfil}</h1>
+                        <p>Entre com seus dados de acesso abaixo.</p>
+                    </div>
+                    <div class="login-form" style="display: flex; flex-direction: column; gap: 15px;">
+                        <input type="text" id="usuario" placeholder="${dica}" 
+                               style="padding:15px; font-family:'Press Start 2P'; font-size:0.7rem; border:4px solid #42210B; border-radius:15px; background:white;">
+                        
+                        <input type="password" id="senha" placeholder="SENHA" 
+                               style="padding:15px; font-family:'Press Start 2P'; font-size:0.7rem; border:4px solid #42210B; border-radius:15px; background:white;">
+                        
+                        <button onclick="validarAcesso()" 
+                                style="background:#7BB82B; color:white; padding:20px; font-family:'Press Start 2P'; border:5px solid #42210B; border-radius:20px; cursor:pointer;">
+                            ENTRAR NO MUNDO
+                        </button>
+                        
+                        <button onclick="location.reload()" 
+                                style="background:none; border:none; color:white; text-decoration:underline; font-family:'Press Start 2P'; font-size:0.5rem; cursor:pointer; margin-top:10px;">
+                            Voltar para perfis
+                        </button>
+                    </div>
+                `;
+            });
+        });
+    });
+    
+    async function validarAcesso() {
+    const user = document.getElementById('usuario').value;
+    const senha = document.getElementById('senha').value;
+    
+    // Pega a identificação que salvamos no campo escondido
+    const perfil = document.getElementById('perfil_logado').value;
+
+    if (!user || !senha) {
+        alert("Preencha os campos, aventureiro!");
+        return;
+    }
+
+    try {
+        const response = await fetch('/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ user, senha, tipo: perfil })
+        });
+
+        const dados = await response.json();
+
+        if (dados.success) {
+            alert("Conexão estabelecida! <Bem-vindo!></Bem-vindo!>, " + dados.nome);
+            
+            // REDIRECIONAMENTO DINÂMICO
+            if (perfil === "PROFESSOR") {
+                window.location.href = "painel_professor.html";
+            } else {
+                // Se for estudante, vai para a página da turma que vem do servidor
+                // ou você pode fixar: window.location.href = "mapa_estudante.html";
+                window.location.href = dados.turma + ".html";
+            }
+            
+        } else {
+            alert("❌ Erro: " + dados.message);
+        }
+    } catch (error) {
+        alert("Servidor offline. Verifique Seus dados!");
+    }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Mestre - Golden Path</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+
+    <style>
+        :root {
+            --madeira-escura: #42210B;
+            --madeira-clara: #CB7B3B;
+            --terminal-verde: #00FF00;
+            --fonte-pixel: 'Press Start 2P', cursive;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: var(--terminal-verde);
+            font-family: var(--fonte-pixel);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            width: 100%;
+            border: 4px solid var(--madeira-clara);
+            padding: 20px;
+            background: #000;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .sidebar, .main-panel {
+            background: #000;
+            border: 4px solid var(--madeira-clara);
+            padding: 20px;
+            box-shadow: inset 0 0 10px #00FF0033;
+        }
+
+        h2 { font-size: 1rem; color: #fff; border-bottom: 2px solid var(--madeira-clara); padding-bottom: 10px; }
+
+        .status-list { list-style: none; padding: 0; font-size: 0.7rem; line-height: 2; }
+        .status-list li::before { content: "> "; }
+
+        .btn-mestre {
+            background: var(--madeira-clara);
+            color: white;
+            border: 2px solid #fff;
+            padding: 10px;
+            font-family: var(--fonte-pixel);
+            font-size: 0.6rem;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .btn-mestre:hover { background: var(--madeira-escura); }
+
+        .aluno-card {
+            border: 2px solid #333;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.6rem;
+        }
+
+        .online { color: #00FF00; }
+        .offline { color: #FF0000; }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>PAINEL DO MESTRE (DOCENTE)</h1>
+        <p style="font-size: 0.6rem;">Status do Sistema: OPERACIONAL | Mundo: Golden Path</p>
+    </div>
+
+    <div class="container">
+        <!-- Barra Lateral de Comandos -->
+        <aside class="sidebar">
+            <h2>COMANDOS</h2>
+            <button class="btn-mestre">LIBERAR MISSÃO DIÁRIA</button>
+
+            <button class="btn-mestre">VER MAPA GLOBAL</button>
+            <button class="btn-mestre" onclick="window.location.href='/'">SAIR DO SISTEMA</button>
+            
+            <h2 style="margin-top: 30px;">RESUMO</h2>
+            <ul class="status-list">
+                <li>Alunos Totais: 28</li>
+                <li>Ativos Agora: 12</li>
+                <li>Missões Concluídas: 45%</li>
+            </ul>
+        </aside>
+
+        <!-- Monitoramento em Tempo Real -->
+        <main class="main-panel">
+            <h2>MONITORAMENTO DE TURMA - 3º ANO</h2>
+            
+            <div class="aluno-card">
+                <span>Arthur Freire</span>
+                <span class="online">ONLINE - MAPA 3A</span>
+            </div>
+            <div class="aluno-card">
+                <span>Ana Souza</span>
+                <span class="online">ONLINE - MISSÃO 1</span>
+            </div>
+            <div class="aluno-card">
+                <span>Pedro Caio</span>
+                <span class="offline">OFFLINE</span>
+            </div>
+            <p style="font-size: 0.5rem; text-align: center; color: #555;">(Os dados acima são simulados para o visual do painel)</p>
+        </main>
+    </div>
+
+</body>
+</html>
