@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sala do Futuro | Leen</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- CABEÇALHO -->
+        <header class="topo">
+
+            <div class="logo">
+
+                <div class="logo-tree">🌳</div>
+
+                <div>
+                    <p class="mini-title">BEM-VINDA À</p>
+
+                    <h1>SALA DO FUTURO</h1>
+
+                    <p class="subtitle">
+                        Seu presente constrói o seu amanhã
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="online">
+
+                <span class="online-dot"></span>
+
+                <div>
+                    <strong>SISTEMA ONLINE</strong>
+                    <small>Modo demonstrativo</small>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <section class="dashboard">
+
+
+            <!-- ABA ABERTA DE MADEIRA -->
+            <section class="wood-board">
+
+                <div class="wood-decoration top-decoration">
+                    ✦ 🌿 ✦
+                </div>
+
+
+                <!-- TÍTULO DO PAINEL -->
+                <div class="board-title">
+
+                    <p class="mini-title">CENTRAL DO ALUNO</p>
+
+                    <h2>Meu Painel</h2>
+
+                    <p>
+                        Acompanhe suas informações escolares
+                    </p>
+
+                </div>
+
+
+                <!-- INFORMAÇÕES DO USUÁRIO -->
+                <article class="info-card user-card">
+
+                    <div class="card-heading pink-heading">
+
+                        <span class="card-icon">🐿️</span>
+
+                        <h3>INFORMAÇÕES DO USUÁRIO</h3>
+
+                    </div>
+
+                    <div class="user-content">
+
+                        <div class="avatar">
+                            🐿️
+                        </div>
+
+                        <div class="user-details">
+
+                            <p>
+                                <span>NOME DO ALUNO</span>
+                                <strong id="user-name">Leen</strong>
+                            </p>
+
+                            <p>
+                                <span>TURMA</span>
+                                <strong id="user-class">
+                                    2º Ano — Técnico
+                                </strong>
+                            </p>
+
+                            <p>
+                                <span>MATRÍCULA</span>
+                                <strong id="user-registration">
+                                    2025001
+                                </strong>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRESENÇA -->
+                <article class="info-card green-card">
+
+                    <div class="card-heading green-heading">
+
+                        <span class="card-icon">🌿</span>
+
+                        <h3>PRESENÇA</h3>
+
+                    </div>
+
+                    <div class="metric-row">
+
+                        <div>
+                            <p class="metric-label">
+                                Frequência escolar
+                            </p>
+
+                            <p class="metric-description">
+                                Acompanhamento das aulas
+                            </p>
+                        </div>
+
+                        <strong
+                            class="metric-value green-text"
+                            id="attendance">
+                            92%
+                        </strong>
+
+                    </div>
+
+                    <div class="progress">
+                        <div
+                            class="progress-fill"
+                            id="attendance-bar"
+                            style="width: 92%">
+                        </div>
+                    </div>
+
+                </article>
+
+
+                <!-- TAREFAS -->
+                <article class="info-card pink-card">
+
+                    <div class="card-heading pink-heading">
+
+                        <span class="card-icon">📜</span>
+
+                        <h3>TAREFAS PENDENTES</h3>
+
+                    </div>
+
+                    <div class="metric-row">
+
+                        <div>
+                            <p class="metric-label">
+                                Atividades em aberto
+                            </p>
+
+                            <p class="metric-description">
+                                Consulte suas próximas entregas
+                            </p>
+                        </div>
+
+                        <strong
+                            class="metric-value pink-text"
+                            id="tasks">
+                            4
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <!-- NOTIFICAÇÕES -->
+                <article class="info-card gold-card">
+
+                    <div class="card-heading gold-heading">
+
+                        <span class="card-icon">🔔</span>
+
+                        <h3>NOTIFICAÇÕES NÃO LIDAS</h3>
+
+                    </div>
+
+                    <div class="metric-row">
+
+                        <div>
+                            <p class="metric-label">
+                                Mensagens novas
+                            </p>
+
+                            <p class="metric-description">
+                                Avisos e atualizações da plataforma
+                            </p>
+                        </div>
+
+                        <strong
+                            class="metric-value gold-text"
+                            id="notifications">
+                            3
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BOLETIM -->
+                <article class="info-card gold-card">
+
+                    <div class="card-heading gold-heading">
+
+                        <span class="card-icon">🏆</span>
+
+                        <h3>BOLETIM</h3>
+
+                    </div>
+
+                    <div class="metric-row">
+
+                        <div>
+                            <p class="metric-label">
+                                Média geral
+                            </p>
+
+                            <p class="metric-description">
+                                Consulte suas notas e desempenho
+                            </p>
+                        </div>
+
+                        <strong
+                            class="metric-value gold-text"
+                            id="average">
+                            8.5
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <!-- FRASE FINAL -->
+                <div class="board-footer">
+
+                    <span>✦</span>
+
+                    <p>
+                        CONHECIMENTO É A CHAVE DO FUTURO
+                    </p>
+
+                    <span>✦</span>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- PAINEL LATERAL -->
+            <aside class="side-panel">
+
+
+                <!-- RESUMO ESCOLAR -->
+                <section class="summary-box">
+
+                    <div class="side-title">
+
+                        <p class="mini-title">
+                            VISÃO GERAL
+                        </p>
+
+                        <h2>Resumo Escolar</h2>
+
+                        <p>
+                            Dados demonstrativos
+                        </p>
+
+                    </div>
+
+
+                    <!-- GRÁFICO DE PIZZA -->
+                    <div class="pie-chart">
+
+                        <div class="pie-center">
+
+                            <strong>100%</strong>
+
+                            <span>TOTAL</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LEGENDA -->
+                    <div class="legend">
+
+                        <div class="legend-item">
+
+                            <span class="legend-color green"></span>
+
+                            <span>Presença</span>
+
+                            <strong>42%</strong>
+
+                        </div>
+
+                        <div class="legend-item">
+
+                            <span class="legend-color pink"></span>
+
+                            <span>Tarefas</span>
+
+                            <strong>23%</strong>
+
+                        </div>
+
+                        <div class="legend-item">
+
+                            <span class="legend-color gold"></span>
+
+                            <span>Notificações</span>
+
+                            <strong>18%</strong>
+
+                        </div>
+
+                        <div class="legend-item">
+
+                            <span class="legend-color brown"></span>
+
+                            <span>Boletim</span>
+
+                            <strong>17%</strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FRASE -->
+                    <div class="side-message">
+
+                        <span>🌿</span>
+
+                        <p>
+                            Seu progresso começa com cada
+                            pequena conquista!
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- MENU DE NAVEGAÇÃO -->
+                <nav class="menu">
+
+                    <h3>MENU DA SALA</h3>
+
+                    <button class="menu-item active"
+                        data-section="painel">
+                        🏠 Meu Painel
+                    </button>
+
+                    <button class="menu-item"
+                        data-section="tarefas">
+                        📜 Tarefas
+                    </button>
+
+                    <button class="menu-item"
+                        data-section="notificacoes">
+                        🔔 Notificações
+                    </button>
+
+                    <button class="menu-item"
+                        data-section="boletim">
+                        🏆 Boletim
+                    </button>
+
+                    <button class="menu-item"
+                        data-section="presenca">
+                        🌿 Presença
+                    </button>
+
+                </nav>
+
+
+                <!-- STATUS -->
+                <div class="update-box">
+
+                    <span>✦</span>
+
+                    <p id="update-message">
+                        Painel demonstrativo
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+
+        <!-- RODAPÉ -->
+        <footer class="main-footer">
+
+            <p>
+                🐿️ SALA DO FUTURO • PAINEL DO ALUNO
+            </p>
+
+            <p id="date"></p>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
